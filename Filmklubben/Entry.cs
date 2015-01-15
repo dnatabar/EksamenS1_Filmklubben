@@ -17,7 +17,6 @@ namespace Filmklubben
 
         private Member MemberRef { get; set; }
 
-
         public Entry()
         {
 
