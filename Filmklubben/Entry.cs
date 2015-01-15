@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Filmklubben
 {
-    public class Entry
+    public class Entry : IComparable<Entry>
     {
         public int MovieId { get; set; }
         public int MemberId { get; set; }
@@ -16,6 +16,31 @@ namespace Filmklubben
         private Movie MovieRef { get; set; }
 
         private Member MemberRef { get; set; }
+
+
+        public int CompareTo(Entry other)
+        {
+            if (this.Priority == other.Priority)
+            {
+                if (this.Rating == other.Rating)
+                {
+                    if (this.MovieRef != null && other.MovieRef != null)
+                    {
+                        return this.MovieRef.Title.CompareTo(other.MovieRef.Title);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                return other.Rating.CompareTo(this.Rating);
+            }
+            else
+            {
+                return other.Priority.CompareTo(this.Priority);
+            }
+        }
+
 
         public Entry()
         {

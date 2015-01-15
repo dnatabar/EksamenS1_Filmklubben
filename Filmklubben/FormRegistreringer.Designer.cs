@@ -245,14 +245,14 @@
             // textRegistreringerFilmInfoDescription
             // 
             this.textRegistreringerFilmInfoDescription.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textRegistreringerFilmInfoDescription.Location = new System.Drawing.Point(3, 143);
-            this.textRegistreringerFilmInfoDescription.MaximumSize = new System.Drawing.Size(318, 0);
-            this.textRegistreringerFilmInfoDescription.MinimumSize = new System.Drawing.Size(318, 100);
+            this.textRegistreringerFilmInfoDescription.Location = new System.Drawing.Point(3, 70);
+            this.textRegistreringerFilmInfoDescription.MaximumSize = new System.Drawing.Size(318, 273);
+            this.textRegistreringerFilmInfoDescription.MinimumSize = new System.Drawing.Size(318, 273);
             this.textRegistreringerFilmInfoDescription.Multiline = true;
             this.textRegistreringerFilmInfoDescription.Name = "textRegistreringerFilmInfoDescription";
             this.textRegistreringerFilmInfoDescription.ReadOnly = true;
             this.textRegistreringerFilmInfoDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textRegistreringerFilmInfoDescription.Size = new System.Drawing.Size(318, 200);
+            this.textRegistreringerFilmInfoDescription.Size = new System.Drawing.Size(318, 273);
             this.textRegistreringerFilmInfoDescription.TabIndex = 0;
             // 
             // lblRegistreringerFilmInfoDescriptionLabel

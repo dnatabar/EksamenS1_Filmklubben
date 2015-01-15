@@ -19,6 +19,9 @@ namespace Filmklubben
             this.InitializeContent();
         }
 
+        /// <summary>
+        /// Gets Members and Movies from DAO and inserts the data into the relevant ListBox.
+        /// </summary>
         private void InitializeContent()
         {
             List<Member> members = db.GetMembers();
@@ -36,10 +39,16 @@ namespace Filmklubben
 
         }
 
+        /// <summary>
+        /// Updates the ListRegistreringerRegistreringer ListBox with the entries from specified Member object and adds Movie and Member object references to each Entry object.
+        /// </summary>
+        /// <param name="member">The Member object whose Entries should be updates</param>
         private void UpdateEntriesList(Member member)
         {
             this.listRegistreringRegistreringer.Items.Clear();
             List<Entry> entries = db.GetEntries(member.Id);
+            entries.Sort();
+            entries.Reverse();
             foreach (Entry e in entries)
             {
                 foreach (var m in this.comboRegistreringFilm.Items)

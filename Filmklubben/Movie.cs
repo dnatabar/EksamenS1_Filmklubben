@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Filmklubben
 {
-    public class Movie
+    public class Movie : IComparable<Movie>
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -14,6 +14,12 @@ namespace Filmklubben
         public string Description { get; set; }
         public string CoverURL { get; set; }
 
+        
+        public int CompareTo(Movie other)
+        {
+            return this.ReleaseDate.CompareTo(other.ReleaseDate);
+            
+        }
 
         public Movie()
         {

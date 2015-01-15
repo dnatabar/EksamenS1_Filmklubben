@@ -114,6 +114,14 @@ namespace Filmklubben
             }
             return movies;
         }
+        public Movie GetMovie(int id)
+        {
+            string query = "SELECT * FROM movie WHERE movie_id="+id+";";
+            List<List<string>> movieData = this.ExecuteReader(query);
+            Movie movie = new Movie(Convert.ToInt32(movieData[0][0]), movieData[1][0], DateTime.Parse(movieData[2][0]), movieData[3][0], movieData[4][0]);
+            
+            return movie;
+        }
 
         public bool UpdateMember(Member m)
         {
@@ -190,6 +198,11 @@ namespace Filmklubben
             return false;
         }
 
+        /// <summary>
+        /// Gets a List of Entry objects from the "registration" table with a specified MemberId
+        /// </summary>
+        /// <param name="memberId">MemberID of those Entries that should be pulled</param>
+        /// <returns>a List of Entry objects</returns>
         public List<Entry> GetEntries(int memberId)
         {
             string query = "SELECT * FROM registration WHERE member_id=" + memberId + ";";
@@ -206,11 +219,21 @@ namespace Filmklubben
             return entries;
         }
 
+        /// <summary>
+        /// Gets a List of Entry objects from the "registration" table with a specified Member objects MemberId
+        /// </summary>
+        /// <param name="m">Member Object whose entries should be pulled</param>
+        /// <returns>a List of Entry objects</returns>
         public List<Entry> GetEntries(Member m)
         {
             return this.GetEntries(m.Id);
         }
 
+        /// <summary>
+        /// Deletes a row from the "registration" table in the database with the ID's from the specified Entry object
+        /// </summary>
+        /// <param name="e">Entry object with Movie and Member Id</param>
+        /// <returns></returns>
         public bool DeleteEntry(Entry e)
         {
             string query = "DELETE FROM registration WHERE movie_id=" + e.MovieId + " AND member_id=" + e.MemberId + ";";
@@ -222,6 +245,11 @@ namespace Filmklubben
             return false;
         }
 
+        /// <summary>
+        /// Adds a new row to the "registration" table in the database with data from the specified Entry object
+        /// </summary>
+        /// <param name="e">Entry object which contains the required data</param>
+        /// <returns></returns>
         public bool AddEntry (Entry e)
         {
             string query = "INSERT INTO registration VALUES(" + e.MovieId + ", " + e.MemberId + ", " + e.Priority + ", " + e.Rating + ");";
@@ -233,6 +261,11 @@ namespace Filmklubben
             return false;
         }
 
+        /// <summary>
+        /// Updates the row with the specified Entry's Member and Movie Id with the new data in the database.
+        /// </summary>
+        /// <param name="e">Entry to update</param>
+        /// <returns></returns>
         public bool UpdateEntry(Entry e)
         {
             string query = "UPDATE registration SET rating=" + e.Rating + ", priority=" + e.Priority + " WHERE movie_id=" + e.MovieId + " AND member_id=" + e.MemberId + ";";

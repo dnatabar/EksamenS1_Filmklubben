@@ -22,6 +22,7 @@ namespace Filmklubben
 
         private void InitializeListBox()
         {
+            this.listMedlemmer.Items.Clear();
             List<Member> members = db.GetMembers();
             
             foreach (Member m in members)
@@ -57,6 +58,11 @@ namespace Filmklubben
 
         private void btnMedlemmerOpdater_Click(object sender, EventArgs e)
         {
+            if (this.listMedlemmer.SelectedItem == null)
+            {
+                MessageBox.Show("Intet medlem valgt");
+                return;
+            }
             Member selectedMember = (Member)this.listMedlemmer.SelectedItem;
 
             var r = new Regex("[a-zA-Z0-9-.]+@[a-zA-Z0-9-]+\\.[a-zA-Z.]+");
@@ -109,15 +115,40 @@ namespace Filmklubben
 
         private void btnMedlemmerSlet_Click(object sender, EventArgs e)
         {
+            if (this.listMedlemmer.SelectedItem == null)
+            {
+                MessageBox.Show("Intet medlem valgt");
+                return;
+            }
             Member selectedMember = (Member)this.listMedlemmer.SelectedItem;
 
-            db.DeleteMember(selectedMember);
+            if (db.DeleteMember(selectedMember) == false)
+            {
+                MessageBox.Show("Sletning mislykkedes");
+            }
+            else
+            {
+                this.listMedlemmer.Items.Remove(selectedMember);
+            }
         }
 
         private void btnMedlemmerOpret_Click(object sender, EventArgs e)
         {
             int postnr = 0;
             int telefon = 0;
+            string email = "";
+            
+            var r = new Regex("[a-zA-Z0-9-.]+@[a-zA-Z0-9-]+\\.[a-zA-Z.]+");
+            Match match = r.Match(this.textMedlemmerEmail.Text);
+            if (match.Success)
+            {
+                email = textMedlemmerEmail.Text;
+            }
+            else
+            {
+                MessageBox.Show("Ugyldig E-mail adresse");
+                return;
+            }
 
             try
             {
@@ -140,11 +171,16 @@ namespace Filmklubben
                 MessageBox.Show("Ugyldigt telefonnummer");
                 return;
             }
-            Member newMember = new Member(textMedlemmerFornavn.Text, textMedlemmerEfternavn.Text, textMedlemmerAdresse.Text, postnr, telefon, textMedlemmerEmail.Text);
+            Member newMember = new Member(textMedlemmerFornavn.Text, textMedlemmerEfternavn.Text, textMedlemmerAdresse.Text, postnr, telefon, email);
 
             if (db.AddMember(newMember) == false)
             {
                 MessageBox.Show("Tilføjelse mislykkedes");
+            }
+            else
+            {
+                this.listMedlemmer.Items.Add(newMember);
+                this.InitializeListBox();
             }
 
         }

@@ -42,6 +42,8 @@
             this.dateFilmReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.lblFilmCoverUrlLabel = new System.Windows.Forms.Label();
             this.textCoverUrl = new System.Windows.Forms.TextBox();
+            this.btnFilmSortById = new System.Windows.Forms.Button();
+            this.btnFilmSortByDate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFilmRyd
@@ -167,11 +169,33 @@
             this.textCoverUrl.Size = new System.Drawing.Size(176, 20);
             this.textCoverUrl.TabIndex = 32;
             // 
+            // btnFilmSortById
+            // 
+            this.btnFilmSortById.Location = new System.Drawing.Point(15, 191);
+            this.btnFilmSortById.Name = "btnFilmSortById";
+            this.btnFilmSortById.Size = new System.Drawing.Size(60, 23);
+            this.btnFilmSortById.TabIndex = 33;
+            this.btnFilmSortById.Text = "ID";
+            this.btnFilmSortById.UseVisualStyleBackColor = true;
+            this.btnFilmSortById.Click += new System.EventHandler(this.btnFilmSortById_Click);
+            // 
+            // btnFilmSortByDate
+            // 
+            this.btnFilmSortByDate.Location = new System.Drawing.Point(81, 191);
+            this.btnFilmSortByDate.Name = "btnFilmSortByDate";
+            this.btnFilmSortByDate.Size = new System.Drawing.Size(74, 23);
+            this.btnFilmSortByDate.TabIndex = 34;
+            this.btnFilmSortByDate.Text = "Dato";
+            this.btnFilmSortByDate.UseVisualStyleBackColor = true;
+            this.btnFilmSortByDate.Click += new System.EventHandler(this.btnFilmSortByDate_Click);
+            // 
             // FormFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 262);
+            this.Controls.Add(this.btnFilmSortByDate);
+            this.Controls.Add(this.btnFilmSortById);
             this.Controls.Add(this.textCoverUrl);
             this.Controls.Add(this.lblFilmCoverUrlLabel);
             this.Controls.Add(this.dateFilmReleaseDate);
@@ -211,5 +235,7 @@
         private System.Windows.Forms.DateTimePicker dateFilmReleaseDate;
         private System.Windows.Forms.Label lblFilmCoverUrlLabel;
         private System.Windows.Forms.TextBox textCoverUrl;
+        private System.Windows.Forms.Button btnFilmSortById;
+        private System.Windows.Forms.Button btnFilmSortByDate;
     }
 }
