@@ -37,6 +37,7 @@ namespace Filmklubben
                 textFilmTitel.Text = selectedMovie.Title;
                 dateFilmReleaseDate.Value = selectedMovie.ReleaseDate;
                 textFilmBeskrivelse.Text = selectedMovie.Description;
+                textCoverUrl.Text = selectedMovie.CoverURL;
             }
         }
 

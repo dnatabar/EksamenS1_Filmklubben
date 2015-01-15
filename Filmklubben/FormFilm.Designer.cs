@@ -40,11 +40,13 @@
             this.textFilmTitel = new System.Windows.Forms.TextBox();
             this.textFilmBeskrivelse = new System.Windows.Forms.TextBox();
             this.dateFilmReleaseDate = new System.Windows.Forms.DateTimePicker();
+            this.lblFilmCoverUrlLabel = new System.Windows.Forms.Label();
+            this.textCoverUrl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnFilmRyd
             // 
-            this.btnFilmRyd.Location = new System.Drawing.Point(326, 213);
+            this.btnFilmRyd.Location = new System.Drawing.Point(326, 232);
             this.btnFilmRyd.Name = "btnFilmRyd";
             this.btnFilmRyd.Size = new System.Drawing.Size(100, 23);
             this.btnFilmRyd.TabIndex = 27;
@@ -54,7 +56,7 @@
             // 
             // btnFilmSlet
             // 
-            this.btnFilmSlet.Location = new System.Drawing.Point(220, 213);
+            this.btnFilmSlet.Location = new System.Drawing.Point(220, 232);
             this.btnFilmSlet.Name = "btnFilmSlet";
             this.btnFilmSlet.Size = new System.Drawing.Size(100, 23);
             this.btnFilmSlet.TabIndex = 26;
@@ -64,7 +66,7 @@
             // 
             // btnFilmOpdater
             // 
-            this.btnFilmOpdater.Location = new System.Drawing.Point(326, 184);
+            this.btnFilmOpdater.Location = new System.Drawing.Point(326, 203);
             this.btnFilmOpdater.Name = "btnFilmOpdater";
             this.btnFilmOpdater.Size = new System.Drawing.Size(100, 23);
             this.btnFilmOpdater.TabIndex = 25;
@@ -75,7 +77,7 @@
             // lblFilmBeskrivelseLabel
             // 
             this.lblFilmBeskrivelseLabel.AutoSize = true;
-            this.lblFilmBeskrivelseLabel.Location = new System.Drawing.Point(161, 83);
+            this.lblFilmBeskrivelseLabel.Location = new System.Drawing.Point(161, 102);
             this.lblFilmBeskrivelseLabel.Name = "lblFilmBeskrivelseLabel";
             this.lblFilmBeskrivelseLabel.Size = new System.Drawing.Size(61, 13);
             this.lblFilmBeskrivelseLabel.TabIndex = 24;
@@ -84,7 +86,7 @@
             // lblFilmReleaseDateLabel
             // 
             this.lblFilmReleaseDateLabel.AutoSize = true;
-            this.lblFilmReleaseDateLabel.Location = new System.Drawing.Point(161, 57);
+            this.lblFilmReleaseDateLabel.Location = new System.Drawing.Point(161, 76);
             this.lblFilmReleaseDateLabel.Name = "lblFilmReleaseDateLabel";
             this.lblFilmReleaseDateLabel.Size = new System.Drawing.Size(83, 13);
             this.lblFilmReleaseDateLabel.TabIndex = 23;
@@ -119,7 +121,7 @@
             // 
             // btnFilmOpret
             // 
-            this.btnFilmOpret.Location = new System.Drawing.Point(220, 184);
+            this.btnFilmOpret.Location = new System.Drawing.Point(220, 203);
             this.btnFilmOpret.Name = "btnFilmOpret";
             this.btnFilmOpret.Size = new System.Drawing.Size(100, 23);
             this.btnFilmOpret.TabIndex = 19;
@@ -136,7 +138,7 @@
             // 
             // textFilmBeskrivelse
             // 
-            this.textFilmBeskrivelse.Location = new System.Drawing.Point(250, 83);
+            this.textFilmBeskrivelse.Location = new System.Drawing.Point(250, 102);
             this.textFilmBeskrivelse.Multiline = true;
             this.textFilmBeskrivelse.Name = "textFilmBeskrivelse";
             this.textFilmBeskrivelse.Size = new System.Drawing.Size(176, 95);
@@ -144,16 +146,34 @@
             // 
             // dateFilmReleaseDate
             // 
-            this.dateFilmReleaseDate.Location = new System.Drawing.Point(250, 57);
+            this.dateFilmReleaseDate.Location = new System.Drawing.Point(250, 76);
             this.dateFilmReleaseDate.Name = "dateFilmReleaseDate";
             this.dateFilmReleaseDate.Size = new System.Drawing.Size(176, 20);
             this.dateFilmReleaseDate.TabIndex = 30;
+            // 
+            // lblFilmCoverUrlLabel
+            // 
+            this.lblFilmCoverUrlLabel.AutoSize = true;
+            this.lblFilmCoverUrlLabel.Location = new System.Drawing.Point(161, 53);
+            this.lblFilmCoverUrlLabel.Name = "lblFilmCoverUrlLabel";
+            this.lblFilmCoverUrlLabel.Size = new System.Drawing.Size(58, 13);
+            this.lblFilmCoverUrlLabel.TabIndex = 31;
+            this.lblFilmCoverUrlLabel.Text = "Cover Link";
+            // 
+            // textCoverUrl
+            // 
+            this.textCoverUrl.Location = new System.Drawing.Point(250, 50);
+            this.textCoverUrl.Name = "textCoverUrl";
+            this.textCoverUrl.Size = new System.Drawing.Size(176, 20);
+            this.textCoverUrl.TabIndex = 32;
             // 
             // FormFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 248);
+            this.ClientSize = new System.Drawing.Size(432, 262);
+            this.Controls.Add(this.textCoverUrl);
+            this.Controls.Add(this.lblFilmCoverUrlLabel);
             this.Controls.Add(this.dateFilmReleaseDate);
             this.Controls.Add(this.textFilmBeskrivelse);
             this.Controls.Add(this.textFilmTitel);
@@ -166,8 +186,8 @@
             this.Controls.Add(this.listFilm);
             this.Controls.Add(this.lblFilmLabel);
             this.Controls.Add(this.btnFilmOpret);
-            this.MaximumSize = new System.Drawing.Size(448, 287);
-            this.MinimumSize = new System.Drawing.Size(448, 287);
+            this.MaximumSize = new System.Drawing.Size(448, 301);
+            this.MinimumSize = new System.Drawing.Size(448, 301);
             this.Name = "FormFilm";
             this.Text = "Film";
             this.ResumeLayout(false);
@@ -189,5 +209,7 @@
         private System.Windows.Forms.TextBox textFilmTitel;
         private System.Windows.Forms.TextBox textFilmBeskrivelse;
         private System.Windows.Forms.DateTimePicker dateFilmReleaseDate;
+        private System.Windows.Forms.Label lblFilmCoverUrlLabel;
+        private System.Windows.Forms.TextBox textCoverUrl;
     }
 }

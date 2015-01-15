@@ -177,6 +177,11 @@ namespace Filmklubben
                 {
                     lblRegistreringerFilmInfoTitel.Text = movie.Title;
                     lblRegistreringerFilmInfoReleaseDate.Text = movie.ReleaseDate.ToString("d/M/yyyy");
+                    textRegistreringerFilmInfoDescription.Text = movie.Description;
+                    if (movie.CoverURL != "" && movie.CoverURL != null)
+                    {
+                        this.pictureRegistreringerFilmInfoCover.ImageLocation = movie.CoverURL;
+                    }
                 }
                 
             }

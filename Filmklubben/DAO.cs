@@ -110,7 +110,7 @@ namespace Filmklubben
 
             for (int i=0;i<movieData[0].Count(); i++)
             {
-                movies.Add(new Movie(Convert.ToInt32(movieData[0][i]), movieData[1][i], DateTime.Parse(movieData[2][i]), movieData[3][i]));
+                movies.Add(new Movie(Convert.ToInt32(movieData[0][i]), movieData[1][i], DateTime.Parse(movieData[2][i]), movieData[3][i], movieData[4][i]));
             }
             return movies;
         }
@@ -128,7 +128,7 @@ namespace Filmklubben
 
         public bool UpdateMovie(Movie m)
         {
-            string query = "UPDATE movie SET title='" + m.Title + "', description='" + m.Description + "', releasedate='" + m.ReleaseDate.ToString("yyyy-MM-dd") + "' WHERE movie_id=" + m.Id + ";";
+            string query = "UPDATE movie SET title='" + m.Title + "', description='" + m.Description + "', releasedate='" + m.ReleaseDate.ToString("yyyy-MM-dd") + "', coverurl='"+m.CoverURL+"' WHERE movie_id=" + m.Id + ";";
             if (this.ExecuteNonQuery(query) > 0)
             {
                 return true;
@@ -181,7 +181,7 @@ namespace Filmklubben
 
         public bool AddMovie(Movie m)
         {
-            string query = "INSERT INTO movie(title, releasedate, description) VALUES('" + m.Title + "', '" + m.ReleaseDate.ToString("yyyy-MM-dd") + "', '" + m.Description + ");";
+            string query = "INSERT INTO movie(title, releasedate, description, coverurl) VALUES('" + m.Title + "', '" + m.ReleaseDate.ToString("yyyy-MM-dd") + "', '" + m.Description + "', '"+m.CoverURL+"');";
 
             if (this.ExecuteNonQuery(query) > 0)
             {

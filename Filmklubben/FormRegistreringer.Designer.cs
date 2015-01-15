@@ -42,15 +42,16 @@
             this.btnRegistreringOpdater = new System.Windows.Forms.Button();
             this.btnRegistreringSlet = new System.Windows.Forms.Button();
             this.groupRegistreringFilmInfo = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblRegistreringerFilmInfoTitelLabel = new System.Windows.Forms.Label();
-            this.lblRegistreringerFilmInfoTitel = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblRegistreringerFilmInfoReleaseDateLabel = new System.Windows.Forms.Label();
             this.lblRegistreringerFilmInfoReleaseDate = new System.Windows.Forms.Label();
+            this.lblRegistreringerFilmInfoReleaseDateLabel = new System.Windows.Forms.Label();
+            this.pictureRegistreringerFilmInfoCover = new System.Windows.Forms.PictureBox();
+            this.lblRegistreringerFilmInfoTitel = new System.Windows.Forms.Label();
+            this.lblRegistreringerFilmInfoTitelLabel = new System.Windows.Forms.Label();
+            this.textRegistreringerFilmInfoDescription = new System.Windows.Forms.TextBox();
+            this.lblRegistreringerFilmInfoDescriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupRegistreringFilmInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRegistreringerFilmInfoCover)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegistreringMedlemmerLabel
@@ -159,7 +160,7 @@
             this.listRegistreringRegistreringer.FormattingEnabled = true;
             this.listRegistreringRegistreringer.Location = new System.Drawing.Point(79, 177);
             this.listRegistreringRegistreringer.Name = "listRegistreringRegistreringer";
-            this.listRegistreringRegistreringer.Size = new System.Drawing.Size(375, 108);
+            this.listRegistreringRegistreringer.Size = new System.Drawing.Size(375, 186);
             this.listRegistreringRegistreringer.TabIndex = 11;
             this.listRegistreringRegistreringer.SelectedIndexChanged += new System.EventHandler(this.listRegistreringRegistreringer_SelectedIndexChanged);
             // 
@@ -185,57 +186,27 @@
             // 
             // groupRegistreringFilmInfo
             // 
+            this.groupRegistreringFilmInfo.Controls.Add(this.lblRegistreringerFilmInfoDescriptionLabel);
             this.groupRegistreringFilmInfo.Controls.Add(this.lblRegistreringerFilmInfoReleaseDate);
             this.groupRegistreringFilmInfo.Controls.Add(this.lblRegistreringerFilmInfoReleaseDateLabel);
-            this.groupRegistreringFilmInfo.Controls.Add(this.pictureBox2);
+            this.groupRegistreringFilmInfo.Controls.Add(this.pictureRegistreringerFilmInfoCover);
             this.groupRegistreringFilmInfo.Controls.Add(this.lblRegistreringerFilmInfoTitel);
             this.groupRegistreringFilmInfo.Controls.Add(this.lblRegistreringerFilmInfoTitelLabel);
-            this.groupRegistreringFilmInfo.Controls.Add(this.textBox1);
+            this.groupRegistreringFilmInfo.Controls.Add(this.textRegistreringerFilmInfoDescription);
             this.groupRegistreringFilmInfo.Location = new System.Drawing.Point(460, 12);
             this.groupRegistreringFilmInfo.Name = "groupRegistreringFilmInfo";
-            this.groupRegistreringFilmInfo.Size = new System.Drawing.Size(324, 273);
+            this.groupRegistreringFilmInfo.Size = new System.Drawing.Size(599, 346);
             this.groupRegistreringFilmInfo.TabIndex = 14;
             this.groupRegistreringFilmInfo.TabStop = false;
             this.groupRegistreringFilmInfo.Text = "Film Info";
             // 
-            // textBox1
+            // lblRegistreringerFilmInfoReleaseDate
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Location = new System.Drawing.Point(3, 170);
-            this.textBox1.MaximumSize = new System.Drawing.Size(318, 100);
-            this.textBox1.MinimumSize = new System.Drawing.Size(318, 100);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(318, 100);
-            this.textBox1.TabIndex = 0;
-            // 
-            // lblRegistreringerFilmInfoTitelLabel
-            // 
-            this.lblRegistreringerFilmInfoTitelLabel.AutoSize = true;
-            this.lblRegistreringerFilmInfoTitelLabel.Location = new System.Drawing.Point(6, 16);
-            this.lblRegistreringerFilmInfoTitelLabel.Name = "lblRegistreringerFilmInfoTitelLabel";
-            this.lblRegistreringerFilmInfoTitelLabel.Size = new System.Drawing.Size(30, 13);
-            this.lblRegistreringerFilmInfoTitelLabel.TabIndex = 1;
-            this.lblRegistreringerFilmInfoTitelLabel.Text = "Titel:";
-            // 
-            // lblRegistreringerFilmInfoTitel
-            // 
-            this.lblRegistreringerFilmInfoTitel.AutoSize = true;
-            this.lblRegistreringerFilmInfoTitel.Location = new System.Drawing.Point(99, 16);
-            this.lblRegistreringerFilmInfoTitel.Name = "lblRegistreringerFilmInfoTitel";
-            this.lblRegistreringerFilmInfoTitel.Size = new System.Drawing.Size(0, 13);
-            this.lblRegistreringerFilmInfoTitel.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Filmklubben.Properties.Resources.Filmrulle;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 57);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(309, 107);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.lblRegistreringerFilmInfoReleaseDate.AutoSize = true;
+            this.lblRegistreringerFilmInfoReleaseDate.Location = new System.Drawing.Point(99, 35);
+            this.lblRegistreringerFilmInfoReleaseDate.Name = "lblRegistreringerFilmInfoReleaseDate";
+            this.lblRegistreringerFilmInfoReleaseDate.Size = new System.Drawing.Size(0, 13);
+            this.lblRegistreringerFilmInfoReleaseDate.TabIndex = 5;
             // 
             // lblRegistreringerFilmInfoReleaseDateLabel
             // 
@@ -246,19 +217,58 @@
             this.lblRegistreringerFilmInfoReleaseDateLabel.TabIndex = 4;
             this.lblRegistreringerFilmInfoReleaseDateLabel.Text = "Udgivelses dato:";
             // 
-            // lblRegistreringerFilmInfoReleaseDate
+            // pictureRegistreringerFilmInfoCover
             // 
-            this.lblRegistreringerFilmInfoReleaseDate.AutoSize = true;
-            this.lblRegistreringerFilmInfoReleaseDate.Location = new System.Drawing.Point(99, 35);
-            this.lblRegistreringerFilmInfoReleaseDate.Name = "lblRegistreringerFilmInfoReleaseDate";
-            this.lblRegistreringerFilmInfoReleaseDate.Size = new System.Drawing.Size(0, 13);
-            this.lblRegistreringerFilmInfoReleaseDate.TabIndex = 5;
+            this.pictureRegistreringerFilmInfoCover.Location = new System.Drawing.Point(327, 16);
+            this.pictureRegistreringerFilmInfoCover.Name = "pictureRegistreringerFilmInfoCover";
+            this.pictureRegistreringerFilmInfoCover.Size = new System.Drawing.Size(266, 324);
+            this.pictureRegistreringerFilmInfoCover.TabIndex = 3;
+            this.pictureRegistreringerFilmInfoCover.TabStop = false;
+            // 
+            // lblRegistreringerFilmInfoTitel
+            // 
+            this.lblRegistreringerFilmInfoTitel.AutoSize = true;
+            this.lblRegistreringerFilmInfoTitel.Location = new System.Drawing.Point(99, 16);
+            this.lblRegistreringerFilmInfoTitel.Name = "lblRegistreringerFilmInfoTitel";
+            this.lblRegistreringerFilmInfoTitel.Size = new System.Drawing.Size(0, 13);
+            this.lblRegistreringerFilmInfoTitel.TabIndex = 2;
+            // 
+            // lblRegistreringerFilmInfoTitelLabel
+            // 
+            this.lblRegistreringerFilmInfoTitelLabel.AutoSize = true;
+            this.lblRegistreringerFilmInfoTitelLabel.Location = new System.Drawing.Point(6, 16);
+            this.lblRegistreringerFilmInfoTitelLabel.Name = "lblRegistreringerFilmInfoTitelLabel";
+            this.lblRegistreringerFilmInfoTitelLabel.Size = new System.Drawing.Size(30, 13);
+            this.lblRegistreringerFilmInfoTitelLabel.TabIndex = 1;
+            this.lblRegistreringerFilmInfoTitelLabel.Text = "Titel:";
+            // 
+            // textRegistreringerFilmInfoDescription
+            // 
+            this.textRegistreringerFilmInfoDescription.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textRegistreringerFilmInfoDescription.Location = new System.Drawing.Point(3, 143);
+            this.textRegistreringerFilmInfoDescription.MaximumSize = new System.Drawing.Size(318, 0);
+            this.textRegistreringerFilmInfoDescription.MinimumSize = new System.Drawing.Size(318, 100);
+            this.textRegistreringerFilmInfoDescription.Multiline = true;
+            this.textRegistreringerFilmInfoDescription.Name = "textRegistreringerFilmInfoDescription";
+            this.textRegistreringerFilmInfoDescription.ReadOnly = true;
+            this.textRegistreringerFilmInfoDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textRegistreringerFilmInfoDescription.Size = new System.Drawing.Size(318, 200);
+            this.textRegistreringerFilmInfoDescription.TabIndex = 0;
+            // 
+            // lblRegistreringerFilmInfoDescriptionLabel
+            // 
+            this.lblRegistreringerFilmInfoDescriptionLabel.AutoSize = true;
+            this.lblRegistreringerFilmInfoDescriptionLabel.Location = new System.Drawing.Point(7, 54);
+            this.lblRegistreringerFilmInfoDescriptionLabel.Name = "lblRegistreringerFilmInfoDescriptionLabel";
+            this.lblRegistreringerFilmInfoDescriptionLabel.Size = new System.Drawing.Size(61, 13);
+            this.lblRegistreringerFilmInfoDescriptionLabel.TabIndex = 6;
+            this.lblRegistreringerFilmInfoDescriptionLabel.Text = "Beskrivelse";
             // 
             // FormRegistreringer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 297);
+            this.ClientSize = new System.Drawing.Size(1065, 370);
             this.Controls.Add(this.groupRegistreringFilmInfo);
             this.Controls.Add(this.btnRegistreringSlet);
             this.Controls.Add(this.btnRegistreringOpdater);
@@ -279,7 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupRegistreringFilmInfo.ResumeLayout(false);
             this.groupRegistreringFilmInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRegistreringerFilmInfoCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,11 +311,12 @@
         private System.Windows.Forms.Button btnRegistreringOpdater;
         private System.Windows.Forms.Button btnRegistreringSlet;
         private System.Windows.Forms.GroupBox groupRegistreringFilmInfo;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureRegistreringerFilmInfoCover;
         private System.Windows.Forms.Label lblRegistreringerFilmInfoTitel;
         private System.Windows.Forms.Label lblRegistreringerFilmInfoTitelLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textRegistreringerFilmInfoDescription;
         private System.Windows.Forms.Label lblRegistreringerFilmInfoReleaseDate;
         private System.Windows.Forms.Label lblRegistreringerFilmInfoReleaseDateLabel;
+        private System.Windows.Forms.Label lblRegistreringerFilmInfoDescriptionLabel;
     }
 }
