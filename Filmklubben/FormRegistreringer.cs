@@ -196,6 +196,11 @@ namespace Filmklubben
             }
         }
 
+        private void pictureRegistreringerFilmInfoCover_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

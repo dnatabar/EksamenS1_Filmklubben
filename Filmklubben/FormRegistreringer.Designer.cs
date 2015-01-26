@@ -42,13 +42,13 @@
             this.btnRegistreringOpdater = new System.Windows.Forms.Button();
             this.btnRegistreringSlet = new System.Windows.Forms.Button();
             this.groupRegistreringFilmInfo = new System.Windows.Forms.GroupBox();
+            this.lblRegistreringerFilmInfoDescriptionLabel = new System.Windows.Forms.Label();
             this.lblRegistreringerFilmInfoReleaseDate = new System.Windows.Forms.Label();
             this.lblRegistreringerFilmInfoReleaseDateLabel = new System.Windows.Forms.Label();
             this.pictureRegistreringerFilmInfoCover = new System.Windows.Forms.PictureBox();
             this.lblRegistreringerFilmInfoTitel = new System.Windows.Forms.Label();
             this.lblRegistreringerFilmInfoTitelLabel = new System.Windows.Forms.Label();
             this.textRegistreringerFilmInfoDescription = new System.Windows.Forms.TextBox();
-            this.lblRegistreringerFilmInfoDescriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupRegistreringFilmInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRegistreringerFilmInfoCover)).BeginInit();
@@ -200,6 +200,15 @@
             this.groupRegistreringFilmInfo.TabStop = false;
             this.groupRegistreringFilmInfo.Text = "Film Info";
             // 
+            // lblRegistreringerFilmInfoDescriptionLabel
+            // 
+            this.lblRegistreringerFilmInfoDescriptionLabel.AutoSize = true;
+            this.lblRegistreringerFilmInfoDescriptionLabel.Location = new System.Drawing.Point(7, 54);
+            this.lblRegistreringerFilmInfoDescriptionLabel.Name = "lblRegistreringerFilmInfoDescriptionLabel";
+            this.lblRegistreringerFilmInfoDescriptionLabel.Size = new System.Drawing.Size(61, 13);
+            this.lblRegistreringerFilmInfoDescriptionLabel.TabIndex = 6;
+            this.lblRegistreringerFilmInfoDescriptionLabel.Text = "Beskrivelse";
+            // 
             // lblRegistreringerFilmInfoReleaseDate
             // 
             this.lblRegistreringerFilmInfoReleaseDate.AutoSize = true;
@@ -224,6 +233,7 @@
             this.pictureRegistreringerFilmInfoCover.Size = new System.Drawing.Size(266, 324);
             this.pictureRegistreringerFilmInfoCover.TabIndex = 3;
             this.pictureRegistreringerFilmInfoCover.TabStop = false;
+            this.pictureRegistreringerFilmInfoCover.Click += new System.EventHandler(this.pictureRegistreringerFilmInfoCover_Click);
             // 
             // lblRegistreringerFilmInfoTitel
             // 
@@ -254,15 +264,6 @@
             this.textRegistreringerFilmInfoDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textRegistreringerFilmInfoDescription.Size = new System.Drawing.Size(318, 273);
             this.textRegistreringerFilmInfoDescription.TabIndex = 0;
-            // 
-            // lblRegistreringerFilmInfoDescriptionLabel
-            // 
-            this.lblRegistreringerFilmInfoDescriptionLabel.AutoSize = true;
-            this.lblRegistreringerFilmInfoDescriptionLabel.Location = new System.Drawing.Point(7, 54);
-            this.lblRegistreringerFilmInfoDescriptionLabel.Name = "lblRegistreringerFilmInfoDescriptionLabel";
-            this.lblRegistreringerFilmInfoDescriptionLabel.Size = new System.Drawing.Size(61, 13);
-            this.lblRegistreringerFilmInfoDescriptionLabel.TabIndex = 6;
-            this.lblRegistreringerFilmInfoDescriptionLabel.Text = "Beskrivelse";
             // 
             // FormRegistreringer
             // 

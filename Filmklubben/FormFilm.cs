@@ -19,6 +19,10 @@ namespace Filmklubben
             this.InitializeListBox(false);
         }
 
+        /// <summary>
+        /// Pulls data from the DAO and updates the ListBox.
+        /// </summary>
+        /// <param name="sort">if set to <c>true</c> [sort].</param>
         private void InitializeListBox(bool sort)
         {
             this.listFilm.Items.Clear();
@@ -32,7 +36,10 @@ namespace Filmklubben
             }
         }
 
-        private void listFilm_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Updates the TextBoxes and DateTimePicker.
+        /// </summary>
+        private void UpdateTextFields()
         {
             if (this.listFilm.SelectedItem != null)
             {
@@ -44,53 +51,96 @@ namespace Filmklubben
             }
         }
 
-        private void btnFilmSlet_Click(object sender, EventArgs e)
+
+        private void listFilm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.UpdateTextFields();
+        }
+
+        /// <summary>
+        /// Gets the Movie object that is the selected index in the ListBox ListFilm.
+        /// </summary>
+        /// <returns></returns>
+        private Movie GetSelectedMovie()
         {
             if (this.listFilm.SelectedItem == null)
             {
                 MessageBox.Show("Ingen film valgt");
-                return;
-            }
-            Movie selectedMovie = (Movie)this.listFilm.SelectedItem;
-            if (db.DeleteMovie(selectedMovie) == false)
-            {
-                MessageBox.Show("Sletning mislykkedes");
+                return null;
             }
             else
             {
-                this.listFilm.Items.Remove(selectedMovie);
+                return (Movie)this.listFilm.SelectedItem;
             }
         }
 
+        /// <summary>
+        /// Deletes the Movie object and the corresponding row in the Database.
+        /// </summary>
+        private void DeleteFilm()
+        {
+            Movie selectedMovie = this.GetSelectedMovie();
+            if (selectedMovie != null)
+            {
+                if (db.DeleteMovie(selectedMovie) == false)
+                {
+                    MessageBox.Show("Sletning mislykkedes");
+                }
+                else
+                {
+                    this.listFilm.Items.Remove(selectedMovie);
+                }
+            }
+        }
+        private void btnFilmSlet_Click(object sender, EventArgs e)
+        {
+            this.DeleteFilm();
+        }
+
+        /// <summary>
+        /// Updates the Movie object and the corresponding row in the Database.
+        /// </summary>
+        private void UpdateMovie()
+        {
+            Movie selectedMovie = this.GetSelectedMovie();
+            if (selectedMovie != null)
+            {
+                selectedMovie.Title = textFilmTitel.Text;
+                selectedMovie.ReleaseDate = dateFilmReleaseDate.Value;
+                selectedMovie.Description = textFilmBeskrivelse.Text;
+                selectedMovie.CoverURL = textCoverUrl.Text;
+
+                if (db.UpdateMovie(selectedMovie) == false)
+                {
+                    MessageBox.Show("Opdatering mislykkedes");
+                }
+            }
+        }
         private void btnFilmOpdater_Click(object sender, EventArgs e)
         {
-            if (this.listFilm.SelectedItem == null)
-            {
-                MessageBox.Show("Ingen film valgt");
-                return;
-            }
-            Movie selectedMovie = (Movie)this.listFilm.SelectedItem;
 
-            selectedMovie.Title = textFilmTitel.Text;
-            selectedMovie.ReleaseDate = dateFilmReleaseDate.Value;
-            selectedMovie.Description = textFilmBeskrivelse.Text;
-            selectedMovie.CoverURL = textCoverUrl.Text;
-
-            if (db.UpdateMovie(selectedMovie) == false)
-            {
-                MessageBox.Show("Opdatering mislykkedes");
-            }
+            this.UpdateMovie();
         }
 
-        private void btnFilmRyd_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Clears the Text and Date fields.
+        /// </summary>
+        private void ClearFields()
         {
             textFilmTitel.Text = String.Empty;
             textFilmBeskrivelse.Text = String.Empty;
             dateFilmReleaseDate.Value = DateTime.Today;
             textCoverUrl.Text = String.Empty;
         }
+        private void btnFilmRyd_Click(object sender, EventArgs e)
+        {
+            this.ClearFields();
+        }
 
-        private void btnFilmOpret_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Creates a new Movie object from the input data and inserts it into the Database.
+        /// </summary>
+        private void CreateMovie()
         {
             if (textFilmTitel.Text == String.Empty)
             {
@@ -112,6 +162,10 @@ namespace Filmklubben
             {
                 this.InitializeListBox(false);
             }
+        }
+        private void btnFilmOpret_Click(object sender, EventArgs e)
+        {
+            this.CreateMovie();
         }
 
         private void btnFilmSortById_Click(object sender, EventArgs e)

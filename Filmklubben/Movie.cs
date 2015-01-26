@@ -30,7 +30,14 @@ namespace Filmklubben
         {
 
         }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Movie"/> class.
+        /// </summary>
+        /// <param name="id">Movie_Id of object, -1 or lower for movies without a row in the Database.</param>
+        /// <param name="title">Movie title</param>
+        /// <param name="releaseDate">Release date</param>
+        /// <param name="description">Description of the Movie</param>
+        /// <param name="coverURL">Direct URL to a Cover, JPG,PNG,GIF,BMP supported</param>
         public Movie(int id, string title, DateTime releaseDate, string description, string coverURL)
         {
 

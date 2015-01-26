@@ -12,7 +12,6 @@ namespace Filmklubben
 
     public class DAO
     {
-        static Random r = new Random();
         private MySqlConnection connection;
         private string server;
         private string port;
@@ -27,7 +26,9 @@ namespace Filmklubben
             this.Initialize();
         }
 
-        //Initialize values
+        /// <summary>
+        /// Initialize variables and creates a MySQL Connection
+        /// </summary>
         private void Initialize()
         {
             server = "localhost";
@@ -42,7 +43,10 @@ namespace Filmklubben
             connection = new MySqlConnection(connectionString);
         }
 
-        //open connection to database
+        /// <summary>
+        /// Opens a a MySQL connection
+        /// </summary>
+        /// <returns>True if success, false if error</returns>
         private bool OpenConnection()
         {
             try
@@ -58,7 +62,10 @@ namespace Filmklubben
             }
         }
 
-        //Close connection
+        /// <summary>
+        /// Closes a MySQL connection.
+        /// </summary>
+        /// <returns>True if success, false if error</returns>
         private bool CloseConnection()
         {
             try
@@ -102,6 +109,10 @@ namespace Filmklubben
             return member;
         }
 
+        /// <summary>
+        /// Creates a List of Movie objects with all movies in the database.
+        /// </summary>
+        /// <returns>A List of Movie objects</returns>
         public List<Movie> GetMovies()
         {
             string query = "SELECT * FROM movie;";
@@ -114,6 +125,11 @@ namespace Filmklubben
             }
             return movies;
         }
+        /// <summary>
+        /// Creates a Movie object from the row with the specified movie_id.
+        /// </summary>
+        /// <param name="id">The movie_id</param>
+        /// <returns>A Movie object</returns>
         public Movie GetMovie(int id)
         {
             string query = "SELECT * FROM movie WHERE movie_id="+id+";";
@@ -233,7 +249,7 @@ namespace Filmklubben
         /// Deletes a row from the "registration" table in the database with the ID's from the specified Entry object
         /// </summary>
         /// <param name="e">Entry object with Movie and Member Id</param>
-        /// <returns></returns>
+        /// <returns>True if any amount of rows were affected, false if no rows were affected</returns>
         public bool DeleteEntry(Entry e)
         {
             string query = "DELETE FROM registration WHERE movie_id=" + e.MovieId + " AND member_id=" + e.MemberId + ";";
@@ -249,7 +265,7 @@ namespace Filmklubben
         /// Adds a new row to the "registration" table in the database with data from the specified Entry object
         /// </summary>
         /// <param name="e">Entry object which contains the required data</param>
-        /// <returns></returns>
+        /// <returns>True if any amount of rows were affected, false if no rows were affected</returns>
         public bool AddEntry (Entry e)
         {
             string query = "INSERT INTO registration VALUES(" + e.MovieId + ", " + e.MemberId + ", " + e.Priority + ", " + e.Rating + ");";
@@ -265,7 +281,7 @@ namespace Filmklubben
         /// Updates the row with the specified Entry's Member and Movie Id with the new data in the database.
         /// </summary>
         /// <param name="e">Entry to update</param>
-        /// <returns></returns>
+        /// <returns>True if any amount of rows were affected, false if no rows were affected</returns>
         public bool UpdateEntry(Entry e)
         {
             string query = "UPDATE registration SET rating=" + e.Rating + ", priority=" + e.Priority + " WHERE movie_id=" + e.MovieId + " AND member_id=" + e.MemberId + ";";

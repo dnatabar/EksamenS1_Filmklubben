@@ -17,7 +17,13 @@ namespace Filmklubben
 
         private Member MemberRef { get; set; }
 
-
+        /// <summary>
+        /// Compares the current object with another object of the same type.
+        /// </summary>
+        /// <param name="other">An Entry object to compare this object with</param>
+        /// <returns>
+        /// A value that indicates the relative order of the objects being compared. The return value has the following meanings: Value Meaning Less than zero This object is less than the <paramref name="other" /> parameter.Zero This object is equal to <paramref name="other" />. Greater than zero This object is greater than <paramref name="other" />.
+        /// </returns>
         public int CompareTo(Entry other)
         {
             if (this.Priority == other.Priority)
@@ -46,7 +52,13 @@ namespace Filmklubben
         {
 
         }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Entry"/> class.
+        /// </summary>
+        /// <param name="movieId">Movie_Id of the Movie Object</param>
+        /// <param name="memberId">Member_Id of the Member Object</param>
+        /// <param name="rating">Rating from 1 - 5</param>
+        /// <param name="priority">Priority from 1 - 5</param>
         public Entry(int movieId, int memberId, int rating, int priority)
         {
             this.MovieId = movieId;
@@ -54,7 +66,13 @@ namespace Filmklubben
             this.Rating = rating;
             this.Priority = priority;
         }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Entry"/> class.
+        /// </summary>
+        /// <param name="movie">Movie Object reference.</param>
+        /// <param name="member">Member Object reference.</param>
+        /// <param name="rating">Rating from 1 - 5</param>
+        /// <param name="priority">Priority from 1 - 5</param>
         public Entry(Movie movie, Member member, int rating, int priority) : this(movie.Id, member.Id, rating, priority)
         {
             this.MovieRef = movie;
